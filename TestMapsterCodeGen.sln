@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMapsterCodeGen.Contracts", "TestMapsterCodeGen.Contracts\TestMapsterCodeGen.Contracts.csproj", "{301BCF1E-F460-448D-9666-4A8BA55BF559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMapsterCodeGen.Client", "TestMapsterCodeGen.Client\TestMapsterCodeGen.Client.csproj", "{0DD5BA16-4B33-4113-ABD0-898113C721A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{301BCF1E-F460-448D-9666-4A8BA55BF559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301BCF1E-F460-448D-9666-4A8BA55BF559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301BCF1E-F460-448D-9666-4A8BA55BF559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301BCF1E-F460-448D-9666-4A8BA55BF559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD5BA16-4B33-4113-ABD0-898113C721A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD5BA16-4B33-4113-ABD0-898113C721A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD5BA16-4B33-4113-ABD0-898113C721A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD5BA16-4B33-4113-ABD0-898113C721A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

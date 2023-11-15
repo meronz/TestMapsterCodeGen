@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+<!--    <ImplicitUsings>enable</ImplicitUsings>-->
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster.Immutable" Version="1.0.2-pre01" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-rc.2.23480.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-rc.2.23480.2" PrivateAssets="all" />
+    <PackageReference Include="Mapster" Version="7.4.1-pre01" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestMapsterCodeGen.Contracts\TestMapsterCodeGen.Contracts.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Generated Include="**\*.g.cs" />
+  </ItemGroup>
+  <Target Name="CleanGenerated">
+    <Delete Files="@(Generated)" />
+  </Target>
+  <Target Name="Mapster" AfterTargets="AfterBuild">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet tool restore" />
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster model -a $(TargetDir)$(ProjectName).dll -n TestMapsterCodeGen.Client.Models -o Models -r" />
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster extension -a $(TargetDir)$(ProjectName).dll -n TestMapsterCodeGen.Client.Models -o Models" />
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster mapper -a $(TargetDir)$(ProjectName).dll -n TestMapsterCodeGen.Client.Mappers -o Mappers" />
+  </Target>
+
+</Project>
